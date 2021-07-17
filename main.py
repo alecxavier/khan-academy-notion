@@ -73,11 +73,17 @@ for base in main:
         print()
     
     
+
+
+
 #_______________________________
 
 
 
-def empty(input = "default"):
+
+
+
+def khan_(input = "default"):
     
     site_name = input
     first_part_site = site_name[:site_name.rindex(f"/")]
@@ -114,19 +120,27 @@ def empty(input = "default"):
             
             print()
             print()
-    
-        
+
+
+
+notion_math = requests.get('https://www.notion.so/adf44ccdd7c14c7bb7b6c73ed5d3c334?v=c30f8d70789a416b9dc232f1fe0456a7').text
+notion = BeautifulSoup(notion_math, 'lxml')
+
+
+print(notion.prettify())
+
+row_of_cells = notion.find_all('div', class_ = "notion-selectable notion-page-block notion-collection-item")
+
+# divide that row of cells
+
+task_cell = row_of_cells.find_all('div')
+span_cell = task_cell.find_all('span').text
+
 
         
         
         
-        
-        
-        
-        
-        
-        
-        
+
         
         
         
